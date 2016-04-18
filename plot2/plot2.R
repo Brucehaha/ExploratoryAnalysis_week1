@@ -1,6 +1,6 @@
 
 ## set parth
-        setwd("C:/Users/Bruce/Dropbox/R/Exploratory Data Analysis")
+        setwd(setwd(choose.dir()))
 
 ## Electric power consumption data(epc)
         epc <- read.table("household_power_consumption.txt", sep = ";",quote ="", header = TRUE)
@@ -21,6 +21,6 @@
         plot(subepc$datetime, subepc$Global_active_power, type ="l", xlab = "", ylab = "Global Active Power(kilowatts)")
 
 ##output graph
-        dev.copy(png, "plot2.png")
+        dev.copy(png, "plot2.png", width = 480, height = 480, units = "px")
         dev.off()
         

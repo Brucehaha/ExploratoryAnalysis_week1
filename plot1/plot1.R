@@ -1,6 +1,6 @@
 
 ## set parth
-        setwd("C:/Users/Bruce/Dropbox/R/Exploratory Data Analysis")
+        setwd(setwd(choose.dir()))
 
 ## Electric power consumption data(epc)
         epc <- read.table("household_power_consumption.txt", sep = ";",quote ="", header = TRUE)
@@ -21,6 +21,7 @@
         hist(global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red")
 
 ## output png
-        dev.copy(png, "plot1.png")
+        dev.copy(png, "plot1.png", width = 480, height = 480, units = "px")
+        
         dev.off()
 

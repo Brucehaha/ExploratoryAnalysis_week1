@@ -1,6 +1,6 @@
 
 ## set parth
-setwd("C:/Users/Bruce/Dropbox/R/Exploratory Data Analysis")
+setwd(choose.dir())
 
 ## Electric power consumption data(epc)
 epc <- read.table("household_power_consumption.txt", sep = ";",quote ="", header = TRUE)
@@ -39,7 +39,7 @@ subepc$Global_reactive_power <- as.numeric(levels(subepc$Global_reactive_power))
         ## plot last one
         with(subepc, plot(datetime, Global_reactive_power, type = "l", xlab ="datatime"))
         
-        par("text.font")
+    
 
 ##output
 dev.copy(png, "plot4.png", width = 480, height = 480, units = "px")
