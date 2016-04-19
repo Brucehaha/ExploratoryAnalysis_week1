@@ -21,7 +21,9 @@ subepc$Sub_metering_2 <- as.numeric(levels(subepc$Sub_metering_2))[subepc$Sub_me
 subepc$Sub_metering_3 <- as.numeric(levels(subepc$Sub_metering_3))[subepc$Sub_metering_3]
 subepc$Global_reactive_power <- as.numeric(levels(subepc$Global_reactive_power))[subepc$Global_reactive_power]
 
-##plot
+##plot 
+        # open device
+        png(filename = "Plot4.png", width = 480, height = 480)
         par(mfrow= c(2,2))
 
         ## plot lefttop graph
@@ -35,14 +37,11 @@ subepc$Global_reactive_power <- as.numeric(levels(subepc$Global_reactive_power))
         with(subepc, plot(datetime, Sub_metering_1, type = "l", xlab ="", ylab = "Energy sub metering"))
         lines(subepc$datetime, subepc$Sub_metering_2, col = "red")
         lines(subepc$datetime, subepc$Sub_metering_3, col = "blue")
-        legend("topright", lty = c(1,1,1), col = c("black","red","blue"),xjust = 0.5, bty ="n",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+        legend("topright", lty = c(1,1,1), col = c("black","red","blue"), bty ="n",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
         ## plot last one
         with(subepc, plot(datetime, Global_reactive_power, type = "l", xlab ="datatime"))
-        
-    
 
-##output
-dev.copy(png, "plot4.png", width = 480, height = 480, units = "px")
+        dev.off()
 
-dev.off()
-?legend
+
+
